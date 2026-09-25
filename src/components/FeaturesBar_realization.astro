@@ -1,0 +1,36 @@
+---
+const features = [
+  {
+    number: "2000+",
+    subNumber: "REALIZACJI",
+    
+  },
+  {
+    number: "22+",
+    subNumber: "LATA NA RYNKU",
+    
+  },
+
+
+];
+---
+
+
+  <div class="grid grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8 items-center pb-8 pt-8">
+    {features.map((item) => (
+      <div class="flex items-center gap-3">
+        <!-- Liczba z dopiskiem pod spodem -->
+        <div class="flex flex-col items-center shrink-0 min-w-[200px] text-center">
+          <span class="text-3xl lg:text-4xl font-light tracking-tight text-[#165b6f] leading-none">
+            {item.number}
+          </span>
+          <span class="text-[9px] font-bold tracking-widest text-[#165b6f] uppercase mt-1">
+            {item.subNumber}
+          </span>
+        </div>
+
+        
+      
+      </div>
+    ))}
+  </div>

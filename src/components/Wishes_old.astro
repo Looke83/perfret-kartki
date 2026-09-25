@@ -1,0 +1,62 @@
+---
+const wishesList = [
+  {
+    id: 1,
+    fontClass: "font-serif italic font-light tracking-wider",
+    text: "Wszystkim Klientom, Partnerom oraz Sympatykom naszej Firmy składamy życzenia spokojnych i radosnych Świąt Bożego Narodzenia oraz pomyślności i sukcesów w Nowym Roku",
+  },
+  {
+    id: 2,
+    fontClass: "font-serif italic font-light tracking-wider",
+    text: "Wszystkim Klientom, Partnerom oraz Sympatykom naszej Firmy składamy życzenia spokojnych i radosnych Świąt Bożego Narodzenia oraz pomyślności i sukcesów w Nowym Roku",
+  },
+  {
+    id: 3,
+    fontClass: "font-serif italic font-light tracking-wider",
+    text: "Wszystkim Klientom, Partnerom oraz Sympatykom naszej Firmy składamy życzenia spokojnych i radosnych Świąt Bożego Narodzenia oraz pomyślności i sukcesów w Nowym Roku",
+  },
+  {
+    id: 4,
+    fontClass: "font-serif italic font-light tracking-wider",
+    text: "Wszystkim Klientom, Partnerom oraz Sympatykom naszej Firmy składamy życzenia spokojnych i radosnych Świąt Bożego Narodzenia oraz pomyślności i sukcesów w Nowym Roku",
+  },
+  {
+    id: 5,
+    fontClass: "font-serif italic font-light tracking-wider",
+    text: "Wszystkim Klientom, Partnerom oraz Sympatykom naszej Firmy składamy życzenia spokojnych i radosnych Świąt Bożego Narodzenia oraz pomyślności i sukcesów w Nowym Roku",
+  },
+  {
+    id: 6,
+    fontClass: "font-serif italic font-light tracking-wider",
+    text: "Wszystkim Klientom, Partnerom oraz Sympatykom naszej Firmy składamy życzenia spokojnych i radosnych Świąt Bożego Narodzenia oraz pomyślności i sukcesów w Nowym Roku",
+  },
+];
+---
+
+<section id="zyczenia" class="site-wrapper py-14 lg:py-20">
+  <!-- Wycentrowany nagłówek sekcji -->
+  <div class="text-center mb-12 lg:mb-16">
+    <h2
+      class="text-2xl lg:text-3xl font-normal text-neutral-900 tracking-tight"
+    >
+      Życzenia
+    </h2>
+  </div>
+
+  <!-- Siatka 2-kolumnowa z życzeniami -->
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 lg:gap-y-16 max-w-5xl mx-auto"
+  >
+    {
+      wishesList.map((item) => (
+        <div class="text-center flex flex-col justify-center items-center px-4">
+          <p
+            class={`text-sm sm:text-base lg:text-lg text-neutral-800 leading-relaxed ${item.fontClass}`}
+          >
+            {item.text}
+          </p>
+        </div>
+      ))
+    }
+  </div>
+</section>

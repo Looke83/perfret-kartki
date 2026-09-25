@@ -1,0 +1,97 @@
+---
+import { Image } from "astro:assets";
+import FeaturesBarEcard from "./FeaturesBar_ecard.astro";
+import FeaturesBarCard from "./FeaturesBar_card.astro";
+
+// Obrazy kart
+import ecardMockup from "../assets/cards/001-282-kartka1.jpg";
+import cardMockup from "../assets/cards/002-485-kartka2.jpg";
+
+// Przyciski SVG
+import buttEcard from "../assets/svg/butt_ecard.svg";
+import buttDruk from "../assets/svg/butt_druk.svg";
+---
+
+<section class="site-wrapper py-12 lg:py-16">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+    <!-- LEWA KOLUMNA: E-KARTKI (WYŚRODKOWANA) -->
+    <div class="flex flex-col items-center text-center">
+      <!-- Tytuł ze stałym min-h dla idealnego poziomu na desktopie -->
+      <h2
+        class="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold tracking-tight text-[#0d5358] leading-tight mb-6 lg:min-h-[5.5rem] flex items-end justify-center"
+      >
+        <span>Elektroniczne kartki<br />świąteczne dla firm.</span>
+      </h2>
+
+      <!-- Pasek cech / wyróżników -->
+      <div class="w-full flex justify-center mb-8">
+        <FeaturesBarEcard />
+      </div>
+
+      <!-- Mockup / Obrazek -->
+      <div class="w-full max-w-lg mb-8 flex items-center justify-center">
+        <Image
+          src={ecardMockup}
+          alt="Elektroniczne kartki świąteczne na ekranie laptopa"
+          width={700}
+          format="webp"
+          class="w-full h-auto object-contain drop-shadow-md mx-auto"
+        />
+      </div>
+
+      <!-- Przycisk SVG z animacją hover -->
+      <div class="w-full flex justify-center">
+        <a
+          href="/e-kartki"
+          class="group inline-block transition-transform duration-300 hover:scale-103 active:scale-95 cursor-pointer"
+        >
+          <img
+            src={buttEcard.src}
+            alt="Zobacz galerię i zamów e-kartkę"
+            class="h-11 sm:h-12 w-auto object-contain transition-all duration-300 group-hover:drop-shadow-md"
+          />
+        </a>
+      </div>
+    </div>
+
+    <!-- PRAWA KOLUMNA: KARTKI DRUKOWANE (WYŚRODKOWANA) -->
+    <div class="flex flex-col items-center text-center">
+      <!-- Tytuł ze stałym min-h dla idealnego poziomu na desktopie -->
+      <h2
+        class="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold tracking-tight text-[#0d5358] leading-tight mb-6 lg:min-h-[5.5rem] flex items-end justify-center"
+      >
+        <span>Drukowane kartki<br />świąteczne dla firm.</span>
+      </h2>
+
+      <!-- Pasek cech / wyróżników -->
+      <div class="w-full flex justify-center mb-8">
+        <FeaturesBarCard />
+      </div>
+
+      <!-- Mockup / Obrazek -->
+      <div class="w-full max-w-lg mb-8 flex items-center justify-center">
+        <Image
+          src={cardMockup}
+          alt="Drukowane kartki świąteczne dla firm"
+          width={700}
+          format="webp"
+          class="w-full h-auto object-contain drop-shadow-md mx-auto"
+        />
+      </div>
+
+      <!-- Przycisk SVG z animacją hover -->
+      <div class="w-full flex justify-center">
+        <a
+          href="/kartki-drukowane"
+          class="group inline-block transition-transform duration-300 hover:scale-103 active:scale-95 cursor-pointer"
+        >
+          <img
+            src={buttDruk.src}
+            alt="Zobacz galerię i zamów kartkę drukowaną"
+            class="h-11 sm:h-12 w-auto object-contain transition-all duration-300 group-hover:drop-shadow-md"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

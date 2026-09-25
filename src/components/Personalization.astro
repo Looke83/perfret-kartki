@@ -1,0 +1,79 @@
+---
+import { Image } from "astro:assets";
+
+// Domyślne / zastępcze grafiki z assets/cards/
+import mockEcard1 from "../assets/cards/001-282-kartka1.jpg";
+import mockEcard2 from "../assets/cards/002-485-kartka2.jpg";
+import mockPrint1 from "../assets/cards/003-120-kartka3.jpg";
+import mockPrint2 from "../assets/cards/004-001-kartka4.jpg";
+---
+
+<section id="personalizacja" class="py-12 lg:py-16">
+  <div class="site-wrapper flex flex-col items-center">
+    <!-- Nagłówek i podtytuł sekcji -->
+    <div class="text-center mb-10 lg:mb-12">
+      <h2
+        class="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-[#0d5358] mb-3"
+      >
+        Możliwość dostosowania kolorów na kartce do Twojego logo
+      </h2>
+      <p
+        class="text-xs sm:text-sm font-bold tracking-widest text-[#0d5358]/80 uppercase"
+      >
+        Spersonalizuj swoją kartkę, aby idealnie wpasowała się do wizerunku
+        Twojej firmy
+      </p>
+    </div>
+
+    <!-- Prezentacja wariantów w siatce -->
+    <div class="w-full space-y-8 lg:space-y-12">
+      <!-- Rząd 1: E-kartki (laptopy) -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-12 items-center justify-items-center w-full"
+      >
+        <div class="w-full flex justify-center">
+          <Image
+            src={mockEcard1}
+            alt="Wariant kolorystyczny e-kartki 1"
+            width={600}
+            format="webp"
+            class="w-full max-w-sm sm:max-w-md h-auto object-contain drop-shadow-md transition-transform duration-300 hover:scale-102"
+          />
+        </div>
+        <div class="w-full flex justify-center">
+          <Image
+            src={mockEcard2}
+            alt="Wariant kolorystyczny e-kartki 2"
+            width={600}
+            format="webp"
+            class="w-full max-w-sm sm:max-w-md h-auto object-contain drop-shadow-md transition-transform duration-300 hover:scale-102"
+          />
+        </div>
+      </div>
+
+      <!-- Rząd 2: Kartki drukowane -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-12 items-center justify-items-center w-full"
+      >
+        <div class="w-full flex justify-center">
+          <Image
+            src={mockPrint1}
+            alt="Wariant kolorystyczny kartki drukowanej 1"
+            width={600}
+            format="webp"
+            class="w-full max-w-sm sm:max-w-md h-auto object-contain drop-shadow-md transition-transform duration-300 hover:scale-102"
+          />
+        </div>
+        <div class="w-full flex justify-center">
+          <Image
+            src={mockPrint2}
+            alt="Wariant kolorystyczny kartki drukowanej 2"
+            width={600}
+            format="webp"
+            class="w-full max-w-sm sm:max-w-md h-auto object-contain drop-shadow-md transition-transform duration-300 hover:scale-102"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

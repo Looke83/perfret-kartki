@@ -1,0 +1,64 @@
+@import "@fontsource/cormorant-garamond/400.css";
+@import "@fontsource/cormorant-garamond/600.css";
+@import "@fontsource/cormorant-garamond/700.css";
+@import "@fontsource/cormorant-garamond/400-italic.css";
+@import "@fontsource-variable/montserrat";
+
+@import "tailwindcss";
+@import "photoswipe/style.css";
+
+@source "../**/*.astro";
+@source "../**/*.html";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Montserrat Variable", "Montserrat", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Utopia Fluid Typography */
+  --text-step--2: clamp(0.64rem, 0.69rem - 0.22vw, 0.56rem);
+  --text-step--1: clamp(0.80rem, 0.81rem - 0.02vw, 0.79rem);
+  --text-step-0: clamp(1.00rem, 0.96rem + 0.19vw, 1.13rem);
+  --text-step-1: clamp(1.25rem, 1.15rem + 0.44vw, 1.59rem);
+  --text-step-2: clamp(1.56rem, 1.37rem + 0.88vw, 2.25rem);
+  --text-step-3: clamp(1.95rem, 1.62rem + 1.48vw, 3.18rem);
+  --text-step-4: clamp(2.44rem, 1.90rem + 2.42vw, 4.50rem);
+
+  /* Fluid Spacing */
+  --spacing-space-xs:  clamp(0.75rem, 0.71rem + 0.19vw, 0.88rem);
+  --spacing-space-s:   clamp(1.00rem, 0.96rem + 0.19vw, 1.13rem);
+  --spacing-space-m:   clamp(1.50rem, 1.44rem + 0.28vw, 1.69rem);
+  --spacing-space-l:   clamp(2.00rem, 1.92rem + 0.37vw, 2.25rem);
+  --spacing-space-xl:  clamp(3.00rem, 2.88rem + 0.56vw, 3.38rem);
+  --spacing-section-gap: clamp(2.50rem, 1.50rem + 4vw, 5.50rem);
+}
+
+@layer base {
+  body {
+    background-color: #f4f7fa;
+    color: #1e1e1e;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    color: #0d5358;
+    font-weight: 700;
+    line-height: 1.15;
+  }
+
+  h1 { font-size: var(--text-step-4); }
+  h2 { font-size: var(--text-step-2); }
+  h3 { font-size: var(--text-step-1); }
+
+  p {
+    font-family: var(--font-sans);
+    line-height: 1.6;
+  }
+}
+
+.site-wrapper {
+  width: 100%;
+  max-width: 1600px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}

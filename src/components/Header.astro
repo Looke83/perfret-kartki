@@ -1,0 +1,31 @@
+---
+import headerBg from "../assets/svg/header.svg";
+---
+
+<header
+  class="relative w-full overflow-hidden min-h-[548px] bg-no-repeat bg-cover bg-center text-white"
+  style={`background-image: url(${headerBg.src});`}
+>
+  <div class="site-wrapper relative z-10 pt-6 flex justify-end">
+    <!-- 4 ELEMENTY MENU -->
+    <nav
+      class="flex items-center flex-wrap gap-6 sm:gap-8 lg:gap-12 text-xs sm:text-sm font-semibold tracking-wider text-white uppercase"
+    >
+      <a
+        href="/kartki-drukowane"
+        class="hover:text-emerald-300 transition-colors"
+      >
+        KARTKI DRUKOWANE
+      </a>
+      <a href="/e-kartki" class="hover:text-emerald-300 transition-colors">
+        E-KARTKI
+      </a>
+      <a href="#cennik" class="hover:text-emerald-300 transition-colors">
+        CENNIK
+      </a>
+      <a href="#kontakt" class="hover:text-emerald-300 transition-colors">
+        KONTAKT
+      </a>
+    </nav>
+  </div>
+</header>

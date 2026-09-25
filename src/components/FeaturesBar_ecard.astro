@@ -1,0 +1,35 @@
+---
+const features = [
+  {
+    number: "100+",
+    subNumber: "WZORÓW",
+  },
+  {
+    number: "100+",
+    subNumber: "DARMOWA WIZUALIZACJA",
+  },
+  {
+    number: "100+",
+    subNumber: "BEZPŁATNE POPRAWKI",
+  },
+];
+---
+
+<div class="w-full">
+  <div
+    class="grid grid-cols-3 gap-2 sm:gap-4 items-start justify-items-center w-full pb-6 border-b border-[#2d7387]/60"
+  >
+    {
+      features.map((item) => (
+        <div class="flex flex-col items-center justify-center text-center w-full">
+          <span class="text-2xl sm:text-3xl lg:text-4xl font-light tracking-tight text-[#165b6f] leading-none">
+            {item.number}
+          </span>
+          <span class="text-[9px] sm:text-[10px] font-bold tracking-widest text-[#165b6f] uppercase mt-1.5 leading-tight max-w-[110px]">
+            {item.subNumber}
+          </span>
+        </div>
+      ))
+    }
+  </div>
+</div>
