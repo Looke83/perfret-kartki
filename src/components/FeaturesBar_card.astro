@@ -1,37 +1,30 @@
 ---
-const features = [
-  {
-    number: "100+",
-    subNumber: "WZORÓW",
-  },
-  {
-    number: "100+",
-    subNumber: "DARMOWA WIZUALIZACJA",
-  },
-  {
-    number: "100+",
-    subNumber: "BEZPŁATNE POPRAWKI",
-  },
-  {
-    number: "100+",
-    subNumber: "KOPERTY GRATIS",
-  },
+import ikonaWzory from "../assets/svg/ikona-galeria=wzorow=kartek-swiatecznych.svg";
+import ikonaWizualizacja from "../assets/svg/ikona-darmowe-wizualizacje=kartek-swiatecznych.svg";
+import ikonaPoprawki from "../assets/svg/ikona-korekta-grafik-swiatecznych.svg";
+import ikonaKoperty from "../assets/svg/ikona-darmowe-koperty.svg";
+
+const icons = [
+  { src: ikonaWzory.src, alt: "100+ Wzorów" },
+  { src: ikonaWizualizacja.src, alt: "Darmowa wizualizacja" },
+  { src: ikonaPoprawki.src, alt: "Bezpłatne poprawki" },
+  { src: ikonaKoperty.src, alt: "Koperty gratis" },
 ];
 ---
 
 <section class="w-full" aria-label="Wyróżniki kartek drukowanych">
   <div
-    class="grid grid-cols-4 gap-2 sm:gap-4 items-end justify-items-center w-full min-h-[96px] pb-6 border-b border-[#2d7387]/60"
+    class="grid grid-cols-4 gap-2 sm:gap-4 items-end justify-items-center w-full min-h-[110px] pb-6 border-b border-[#2d7387]/60"
   >
     {
-      features.map((item) => (
-        <div class="flex flex-col items-center justify-end text-center w-full">
-          <span class="text-2xl sm:text-3xl lg:text-4xl font-light tracking-tight text-[#165b6f] leading-none">
-            {item.number}
-          </span>
-          <span class="text-[9px] sm:text-[10px] font-bold tracking-widest text-[#165b6f] uppercase mt-1.5 leading-tight max-w-[110px]">
-            {item.subNumber}
-          </span>
+      icons.map((icon) => (
+        <div class="flex items-center justify-center w-full">
+          <img
+            src={icon.src}
+            alt={icon.alt}
+            class="h-16 sm:h-20 w-auto object-contain transition-transform duration-200 hover:scale-105"
+            loading="eager"
+          />
         </div>
       ))
     }
