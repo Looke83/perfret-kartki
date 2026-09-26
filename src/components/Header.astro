@@ -1,31 +1,130 @@
 ---
-import headerBg from "../assets/svg/header.svg";
+import logoSvg from "../assets/svg/logo.svg";
 ---
 
 <header
-  class="relative w-full overflow-hidden min-h-[548px] bg-no-repeat bg-cover bg-center text-white"
-  style={`background-image: url(${headerBg.src});`}
+  class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-neutral-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] transition-all"
 >
-  <div class="site-wrapper relative z-10 pt-6 flex justify-end">
-    <!-- 4 ELEMENTY MENU -->
+  <div class="site-wrapper flex items-center justify-between h-20">
+    <!-- LOGO SVG -->
+    <a
+      href="/"
+      class="flex items-center group cursor-pointer"
+      aria-label="perFRET DESIGN - Strona główna"
+    >
+      <img
+        src={logoSvg.src}
+        alt="perFRET DESIGN"
+        class="h-10 sm:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
+      />
+    </a>
+
+    <!-- MENU DESKTOP (3 pozycje) -->
     <nav
-      class="flex items-center flex-wrap gap-6 sm:gap-8 lg:gap-12 text-xs sm:text-sm font-semibold tracking-wider text-white uppercase"
+      class="hidden md:flex items-center gap-8 lg:gap-10 text-xs sm:text-sm font-semibold tracking-wider text-[#0d5358] uppercase"
     >
       <a
         href="/kartki-drukowane"
-        class="hover:text-emerald-300 transition-colors"
+        class="hover:text-[#1b8a72] transition-colors"
       >
         KARTKI DRUKOWANE
       </a>
-      <a href="/e-kartki" class="hover:text-emerald-300 transition-colors">
+      <a href="/e-kartki" class="hover:text-[#1b8a72] transition-colors">
         E-KARTKI
       </a>
-      <a href="#cennik" class="hover:text-emerald-300 transition-colors">
-        CENNIK
+      <a href="#kontakt" class="hover:text-[#1b8a72] transition-colors">
+        KONTAKT
       </a>
-      <a href="#kontakt" class="hover:text-emerald-300 transition-colors">
+    </nav>
+
+    <!-- HAMBURGER BUTTON (MOBILE) -->
+    <button
+      id="menu-toggle"
+      type="button"
+      class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-hidden cursor-pointer"
+      aria-label="Przełącz menu"
+      aria-expanded="false"
+    >
+      <span
+        class="line line-1 w-6 h-0.5 bg-[#0d5358] transition-all duration-300 transform origin-center"
+      ></span>
+      <span
+        class="line line-2 w-6 h-0.5 bg-[#0d5358] transition-all duration-300"
+      ></span>
+      <span
+        class="line line-3 w-6 h-0.5 bg-[#0d5358] transition-all duration-300 transform origin-center"
+      ></span>
+    </button>
+  </div>
+
+  <!-- MENU MOBILE (SZUFLADA) -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden border-t border-neutral-100 bg-white shadow-xl px-6 py-6"
+  >
+    <nav
+      class="flex flex-col gap-5 text-sm font-semibold tracking-wider text-[#0d5358] uppercase text-left"
+    >
+      <a
+        href="/kartki-drukowane"
+        class="mobile-link py-1 hover:text-[#1b8a72] transition-colors"
+      >
+        KARTKI DRUKOWANE
+      </a>
+      <a
+        href="/e-kartki"
+        class="mobile-link py-1 hover:text-[#1b8a72] transition-colors"
+      >
+        E-KARTKI
+      </a>
+      <a
+        href="#kontakt"
+        class="mobile-link py-1 hover:text-[#1b8a72] transition-colors"
+      >
         KONTAKT
       </a>
     </nav>
   </div>
 </header>
+
+<style>
+  /* Animacja kresek w X */
+  #menu-toggle.is-active .line-1 {
+    transform: translateY(8px) rotate(45deg);
+  }
+  #menu-toggle.is-active .line-2 {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  #menu-toggle.is-active .line-3 {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+</style>
+
+<script>
+  function setupMenu() {
+    const toggleBtn = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const links = document.querySelectorAll(".mobile-link");
+
+    if (!toggleBtn || !mobileMenu) return;
+
+    toggleBtn.addEventListener("click", () => {
+      const isOpen = toggleBtn.classList.toggle("is-active");
+      toggleBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      mobileMenu.classList.toggle("hidden", !isOpen);
+    });
+
+    // Zamknięcie szuflady po kliknięciu w którykolwiek odnośnik
+    links.forEach((link) => {
+      link.addEventListener("click", () => {
+        toggleBtn.classList.remove("is-active");
+        toggleBtn.setAttribute("aria-expanded", "false");
+        mobileMenu.classList.add("hidden");
+      });
+    });
+  }
+
+  setupMenu();
+  document.addEventListener("astro:after-swap", setupMenu);
+</script>

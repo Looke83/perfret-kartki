@@ -15,13 +15,13 @@ const features = [
 ];
 ---
 
-<div class="w-full">
+<section class="w-full" aria-label="Wyróżniki e-kartek">
   <div
-    class="grid grid-cols-3 gap-2 sm:gap-4 items-start justify-items-center w-full pb-6 border-b border-[#2d7387]/60"
+    class="grid grid-cols-3 gap-2 sm:gap-4 items-end justify-items-center w-full min-h-[96px] pb-6 border-b border-[#2d7387]/60"
   >
     {
       features.map((item) => (
-        <div class="flex flex-col items-center justify-center text-center w-full">
+        <div class="flex flex-col items-center justify-end text-center w-full">
           <span class="text-2xl sm:text-3xl lg:text-4xl font-light tracking-tight text-[#165b6f] leading-none">
             {item.number}
           </span>
@@ -32,4 +32,4 @@ const features = [
       ))
     }
   </div>
-</div>
+</section>

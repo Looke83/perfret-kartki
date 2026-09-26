@@ -1,45 +1,30 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
-import CardsGallery from "../components/CardsGallery.astro";
-
-import Footer from "../components/Footer.astro";
+import HeaderBanner from "../components/HeaderBanner.astro";
 import HeroTwoColumns from "../components/HeroTwoColumns.astro";
-import Process from "../components/Process.astro";
-import Wishes from "../components/Wishes.astro";
 import Personalization from "../components/Personalization.astro";
-import Realization from "../components/Realization.astro";
+import Wishes from "../components/Wishes.astro";
+import ClientLogos from "../components/ClientLogos.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout>
-  <!-- Zielony nagłówek z menu, tytułem i sentencją -->
   <Header />
 
-  <!-- Pasek z wyróżnikami 100+ wzorów i 24h z PDF -->
-
-  <main>
+  <!-- Duże sekcje z dużym oddechem -->
+  <main class="flex flex-col gap-20 md:gap-32 lg:gap-40">
+    <HeaderBanner />
     <HeroTwoColumns />
-    <Process />
-    <Wishes />
     <Personalization />
-    <Realization />
-    <!-- Cennik -->
-    <!--
-    <CardsGallery
-      id="kartki-drukowane"
-      folder="cards"
-      title="Wzory kartek świątecznych do wyboru:"
-    />
-    
-    
-    <CardsGallery
-      id="e-kartki"
-      folder="ecards"
-      title="Wzory e-kartek świątecznych do wyboru:"
-    />
-	 -->
+    <Wishes />
   </main>
 
-  <!-- Stopka / Kontakt -->
+  <!-- Pasek logotypów wypośrodkowany idealnie między Wishes a stopką -->
+  <div class="my-12 md:my-16 lg:my-20">
+    <ClientLogos />
+  </div>
+
+  <!-- Stopka bez marginesu górnego (odstęp daje jej my-... z wrappera powyżej) -->
   <Footer />
 </Layout>

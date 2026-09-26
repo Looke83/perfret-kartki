@@ -1,41 +1,135 @@
 ---
+import logoSvg from "../assets/svg/logo.svg";
 
+const currentYear = new Date().getFullYear();
 ---
 
 <footer
   id="kontakt"
-  class="bg-neutral-900 text-white mt-auto py-(--spacing-space-2xl) border-t border-neutral-800"
+  class="bg-[#124b59] text-white pt-14 pb-8 border-t border-[#1e6070] shadow-inner"
 >
-  <div
-    class="site-wrapper flex flex-col md:flex-row items-center justify-between gap-(--spacing-space-m)"
-  >
-    <div>
-      <p class="text-(length:--text-step-1) font-black tracking-tight">
-        perFRET <span class="text-primary font-normal">DESIGN</span>
-      </p>
-      <p class="text-(length:--text-step--1) text-neutral-400 mt-1">
-        Elektroniczne kartki świąteczne dla firm i instytucji.
-      </p>
-    </div>
-
+  <div class="site-wrapper">
+    <!-- Główna siatka: 3 kolumny na desktopie, 1 na telefonach -->
     <div
-      class="flex flex-col sm:flex-row items-center gap-6 text-(length:--text-step--1) text-neutral-300"
+      class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 items-center text-center"
     >
-      <a
-        href="mailto:kontakt@perfret.pl"
-        class="hover:text-white transition-colors"
+      <!-- Lewa kolumna: Dane kontaktowe -->
+      <div
+        class="flex flex-col md:items-end justify-center space-y-2 text-sm sm:text-base text-neutral-200 tracking-wide order-2 md:order-1"
       >
-        kontakt@perfret.pl
-      </a>
-      <a href="tel:+48000000000" class="hover:text-white transition-colors">
-        +48 000 000 000
-      </a>
-    </div>
-  </div>
+        <div class="flex items-center justify-center md:justify-end gap-2">
+          <span class="text-neutral-400 font-light">tel.:</span>
+          <a
+            href="tel:+48606970062"
+            class="font-medium hover:text-white transition-colors"
+          >
+            +48 606 970 062
+          </a>
+        </div>
+        <div>
+          <a
+            href="mailto:mariusz.fret@perfret.com"
+            class="font-medium hover:text-white transition-colors"
+          >
+            mariusz.fret@perfret.com
+          </a>
+        </div>
+      </div>
 
-  <div
-    class="site-wrapper mt-(--spacing-space-l) pt-(--spacing-space-s) border-t border-neutral-800 text-center text-(length:--text-step--2) text-neutral-500"
-  >
-    &copy; {new Date().getFullYear()} perFRET DESIGN. Wszelkie prawa zastrzeżone.
+      <!-- Środkowa kolumna: Logo, hasło i ikony społecznościowe -->
+      <div
+        class="flex flex-col items-center justify-center space-y-4 order-1 md:order-2"
+      >
+        <div class="flex flex-col items-center">
+          <img
+            src={logoSvg.src}
+            alt="perFRET DESIGN"
+            class="h-9 sm:h-11 w-auto object-contain brightness-0 invert"
+          />
+          <span
+            class="text-[11px] sm:text-xs text-neutral-300 italic tracking-wider mt-1.5 font-light"
+          >
+            Poznajmy się i bądźmy perFret!
+          </span>
+        </div>
+
+        <!-- Social Media Icons (X, Facebook, Instagram) -->
+        <div class="flex items-center gap-4 text-neutral-300 pt-1">
+          <!-- X / Twitter -->
+          <a
+            href="https://x.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="X (Twitter)"
+            class="p-1 hover:text-white hover:scale-110 transition-all duration-200"
+          >
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+              ></path>
+            </svg>
+          </a>
+
+          <!-- Facebook -->
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            class="p-1 hover:text-white hover:scale-110 transition-all duration-200"
+          >
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+              ></path>
+            </svg>
+          </a>
+
+          <!-- Instagram -->
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            class="p-1 hover:text-white hover:scale-110 transition-all duration-200"
+          >
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+              ></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Prawa kolumna: Dane adresowe -->
+      <div
+        class="flex flex-col md:items-start justify-center space-y-1 text-sm sm:text-base text-neutral-200 tracking-wide order-3"
+      >
+        <span class="font-medium text-white">perFret DESIGN</span>
+        <span>os. Rzeczypospolitej 60/3</span>
+        <span>61-394 Poznań</span>
+      </div>
+    </div>
+
+    <!-- Pasek Copyright i Wykonanie -->
+    <div
+      class="mt-12 pt-6 border-t border-[#1b6375]/70 flex flex-col sm:flex-row items-center justify-between text-xs text-neutral-300/80 gap-3"
+    >
+      <div>
+        &copy; {currentYear} perFret DESIGN. Wszelkie prawa zastrzeżone.
+      </div>
+      <div>
+        Projekt i realizacja:{" "}
+        <a
+          href="https://way-it.pl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-medium text-white hover:text-[#7ee2c6] transition-colors underline decoration-white/30 hover:decoration-[#7ee2c6] underline-offset-4"
+        >
+          way-IT Łukasz Kufel
+        </a>
+      </div>
+    </div>
   </div>
 </footer>
