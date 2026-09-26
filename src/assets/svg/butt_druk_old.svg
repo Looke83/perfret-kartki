@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 613.38 60.37">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-3 {
+        letter-spacing: 0em;
+      }
+
+      .cls-4, .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-6 {
+        letter-spacing: 0em;
+      }
+
+      .cls-7 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: .94px;
+      }
+
+      .cls-8 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-9 {
+        letter-spacing: 0em;
+      }
+
+      .cls-10 {
+        fill: #bf021c;
+      }
+
+      .cls-11 {
+        letter-spacing: -.04em;
+      }
+
+      .cls-12 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-13 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-5 {
+        font-family: Montserrat-Regular, Montserrat;
+        font-size: 21px;
+      }
+    </style>
+  </defs>
+  <rect class="cls-10" x="1.38" y="1.47" width="612.01" height="57.42" rx="28.71" ry="28.71"/>
+  <g>
+    <text class="cls-5" transform="translate(19.57 36.68)"><tspan class="cls-6" x="0" y="0">Z</tspan><tspan x="13.48" y="0">OB</tspan><tspan class="cls-9" x="46.93" y="0">A</tspan><tspan x="61.78" y="0">CZ GALERIĘ I ZAM</tspan><tspan class="cls-2" x="255.46" y="0">Ó</tspan><tspan class="cls-1" x="272.64" y="0">W </tspan><tspan class="cls-13" x="301.47" y="0">K</tspan><tspan class="cls-1" x="315.84" y="0">A</tspan><tspan class="cls-3" x="330.89" y="0">R</tspan><tspan x="345.87" y="0">TKĘ DRU</tspan><tspan class="cls-12" x="441.56" y="0">K</tspan><tspan class="cls-8" x="455.97" y="0">O</tspan><tspan class="cls-11" x="473.15" y="0">W</tspan><tspan x="495.72" y="0">ANĄ</tspan></text>
+    <g>
+      <line class="cls-7" x1="575.58" y1="30.18" x2="591.25" y2="30.18"/>
+      <polygon class="cls-4" points="585.67 37.54 588.8 30.18 585.67 22.83 603.11 30.18 585.67 37.54"/>
+    </g>
+  </g>
+</svg>

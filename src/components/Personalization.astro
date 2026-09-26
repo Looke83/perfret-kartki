@@ -2,10 +2,10 @@
 import { Image } from "astro:assets";
 
 // Domyślne / zastępcze grafiki z assets/cards/
-import mockEcard1 from "../assets/cards/001-282-kartka1.jpg";
-import mockEcard2 from "../assets/cards/002-485-kartka2.jpg";
-import mockPrint1 from "../assets/cards/003-120-kartka3.jpg";
-import mockPrint2 from "../assets/cards/004-001-kartka4.jpg";
+import mockEcard1 from "../assets/mainpage/personalizowane-kartki-swiateczne-elektroniczne-1.png";
+import mockEcard2 from "../assets/mainpage/personalizowane-kartki-swiateczne-elektroniczne-2.png";
+import mockPrint1 from "../assets/mainpage/personalizowane-kartki-swiateczne-drukowane-1.png";
+import mockPrint2 from "../assets/mainpage/personalizowane-kartki-swiateczne-drukowane-2.png";
 ---
 
 <section id="personalizacja" class="">
@@ -33,30 +33,6 @@ import mockPrint2 from "../assets/cards/004-001-kartka4.jpg";
       >
         <div class="w-full flex justify-center">
           <Image
-            src={mockEcard1}
-            alt="Wariant kolorystyczny e-kartki 1"
-            width={600}
-            format="webp"
-            class="w-full max-w-sm sm:max-w-md h-auto object-contain drop-shadow-md transition-transform duration-300 hover:scale-102"
-          />
-        </div>
-        <div class="w-full flex justify-center">
-          <Image
-            src={mockEcard2}
-            alt="Wariant kolorystyczny e-kartki 2"
-            width={600}
-            format="webp"
-            class="w-full max-w-sm sm:max-w-md h-auto object-contain drop-shadow-md transition-transform duration-300 hover:scale-102"
-          />
-        </div>
-      </div>
-
-      <!-- Rząd 2: Kartki drukowane -->
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-12 items-center justify-items-center w-full"
-      >
-        <div class="w-full flex justify-center">
-          <Image
             src={mockPrint1}
             alt="Wariant kolorystyczny kartki drukowanej 1"
             width={600}
@@ -73,6 +49,28 @@ import mockPrint2 from "../assets/cards/004-001-kartka4.jpg";
             class="w-full max-w-sm sm:max-w-md h-auto object-contain drop-shadow-md transition-transform duration-300 hover:scale-102"
           />
         </div>
+      </div>
+    </div>
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-12 items-center justify-items-center w-full"
+    >
+      <div class="w-full flex justify-center">
+        <Image
+          src={mockEcard1}
+          alt="Wariant kolorystyczny e-kartki 1"
+          width={600}
+          format="webp"
+          class="w-full max-w-sm sm:max-w-md h-auto object-contain drop-shadow-md transition-transform duration-300 hover:scale-102"
+        />
+      </div>
+      <div class="w-full flex justify-center">
+        <Image
+          src={mockEcard2}
+          alt="Wariant kolorystyczny e-kartki 2"
+          width={600}
+          format="webp"
+          class="w-full max-w-sm sm:max-w-md h-auto object-contain drop-shadow-md transition-transform duration-300 hover:scale-102"
+        />
       </div>
     </div>
   </div>

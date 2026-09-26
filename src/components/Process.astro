@@ -1,153 +1,84 @@
 ---
+import ikonaKrok1 from "../assets/svg/ikona-wybierz-wzor.svg";
+import ikonaKrok2 from "../assets/svg/ikona-przeslij-logo-i-zyczenia.svg";
+import ikonaKrok3 from "../assets/svg/ikona-otrzymaj-darmowa-wizualizacje.svg";
+import ikonaKrok4 from "../assets/svg/ikona-zamow-kartke.svg";
+
+// Przyciski SVG dokładnie jak w HeroTwoColumns
+import buttEcard from "../assets/svg/butt_ecard.svg";
+import buttDruk from "../assets/svg/butt_druk.svg";
+
 const steps = [
+  { src: ikonaKrok1.src, alt: "Krok 1: Wybierz wzór" },
+  { src: ikonaKrok2.src, alt: "Krok 2: Prześlij logo i życzenia" },
+  { src: ikonaKrok3.src, alt: "Krok 3: Otrzymaj darmową wizualizację" },
   {
-    icon: "cart",
-    title: "Wybierz wzór",
-  },
-  {
-    icon: "at",
-    title: "Prześlij logo i życzenia",
-  },
-  {
-    icon: "free",
-    title: "Otrzymaj darmową wizualizację",
-  },
-  {
-    icon: "buy",
-    title: "Po akceptacji wzoru zamów i zapłać za kartkę",
+    src: ikonaKrok4.src,
+    alt: "Krok 4: Po akceptacji wzoru zamów i zapłać za kartkę",
   },
 ];
 ---
 
-<section class="site-wrapper py-10 lg:py-14">
+<section id="proces" class="w-full">
+  <div class="site-wrapper flex flex-col items-center">
+    <!-- Nagłówek i podtytuł sekcji 
+    <div class="text-center mb-10 lg:mb-12">
+      <h2
+        class="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-[#0d5358] mb-3"
+      >
+        Jak zamówić kartki świąteczne?
+      </h2>
+      <p
+        class="text-xs sm:text-sm font-bold tracking-widest text-[#0d5358]/80 uppercase"
+      >
+        Prosty i przejrzysty proces w 4 szybkich krokach
+      </p>
+    </div>-->
+
+    <!-- Siatka 4 kroków: 2 na mobile, 4 na desktopie -->
+    <div
+      class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 items-start justify-items-center w-full"
+    >
+      {
+        steps.map((step) => (
+          <div class="flex flex-col items-center justify-center w-full group">
+            <img
+              src={step.src}
+              alt={step.alt}
+              class="w-32 sm:w-36 lg:w-44 h-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-2xs"
+              loading="lazy"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+  <!-- Przyciski z odnośnikami do galerii (jak w HeroTwoColumns) -->
   <div
-    class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 items-start text-center"
+    class="mt-12 lg:mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16 lg:gap-24 w-full"
   >
-    <!-- KROK 1: WÓZEK -->
-    <div class="flex flex-col items-center">
-      <div class="h-16 flex items-center justify-center mb-3">
-        <svg
-          class="w-10 h-10 text-neutral-900"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <circle cx="9" cy="20" r="1.5"></circle>
-          <circle cx="18" cy="20" r="1.5"></circle>
-          <path d="M1 1h4l2.6 12.3a2 2 0 0 0 2 1.7h9.8a2 2 0 0 0 2-1.6L23 5H6"
-          ></path>
-          <line x1="10" y1="5" x2="10" y2="13"></line>
-          <line x1="14" y1="5" x2="14" y2="13"></line>
-          <line x1="18" y1="5" x2="18" y2="13"></line>
-          <line x1="6.5" y1="9" x2="22" y2="9"></line>
-        </svg>
-      </div>
-      <p
-        class="text-sm lg:text-base font-normal text-neutral-900 max-w-[200px] leading-snug"
-      >
-        Wybierz wzór
-      </p>
-    </div>
+    <!-- Przycisk E-kartki -->
+    <a
+      href="/e-kartki"
+      class="group inline-block transition-transform duration-300 hover:scale-103 active:scale-95 cursor-pointer"
+    >
+      <img
+        src={buttEcard.src}
+        alt="Zobacz galerię i zamów e-kartkę"
+        class="h-11 sm:h-12 w-auto object-contain transition-all duration-300 group-hover:drop-shadow-md"
+      />
+    </a>
 
-    <!-- KROK 2: MAŁPA @ -->
-    <div class="flex flex-col items-center">
-      <div class="h-16 flex items-center justify-center mb-3">
-        <svg
-          class="w-11 h-11 text-neutral-900"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.6"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <circle cx="12" cy="12" r="4"></circle>
-          <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"></path>
-        </svg>
-      </div>
-      <p
-        class="text-sm lg:text-base font-normal text-neutral-900 max-w-[200px] leading-snug"
-      >
-        Prześlij logo i życzenia
-      </p>
-    </div>
-
-    <!-- KROK 3: TABLICZKA FREE -->
-    <div class="flex flex-col items-center">
-      <div class="h-16 flex items-center justify-center mb-3">
-        <svg
-          class="w-12 h-12 text-neutral-900"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.7"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <!-- Sznurek / zawieszka -->
-          <path d="M7 9 L12 2 L17 9"></path>
-          <!-- Tabliczka z lekkim obrotem -->
-          <g transform="rotate(-6 12 14)">
-            <rect x="3" y="8" width="18" height="11" rx="2" fill="white"></rect>
-            <text
-              x="12"
-              y="16"
-              font-size="6.5"
-              font-weight="900"
-              text-anchor="middle"
-              fill="currentColor"
-              stroke="none"
-              letter-spacing="0.5">FREE</text
-            >
-          </g>
-        </svg>
-      </div>
-      <p
-        class="text-sm lg:text-base font-normal text-neutral-900 max-w-[200px] leading-snug"
-      >
-        Otrzymaj darmową wizualizację
-      </p>
-    </div>
-
-    <!-- KROK 4: PRZYCISK BUY Z KLIKAJĄCĄ RĄCZKĄ -->
-    <div class="flex flex-col items-center">
-      <div class="h-16 flex items-center justify-center mb-3 relative">
-        <svg
-          class="w-12 h-12 text-neutral-900"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.6"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <!-- Ramka BUY -->
-          <rect x="4" y="2" width="13" height="7" rx="1.5"></rect>
-          <text
-            x="10.5"
-            y="7"
-            font-size="4"
-            font-weight="800"
-            text-anchor="middle"
-            fill="currentColor"
-            stroke="none">BUY</text
-          >
-
-          <!-- Rączka / wskaźnik kursora -->
-          <path d="M12 7.5 V14 a1.5 1.5 0 0 0 3 0 v-1"></path>
-          <path
-            d="M15 11.5 a1.5 1.5 0 0 1 3 0 v2 a4 4 0 0 1-4 4 h-1 a4 4 0 0 1-3-2.5 l-1.5-2.5 a1.5 1.5 0 0 1 2.2-2 l1.3 1.5"
-          ></path>
-        </svg>
-      </div>
-      <p
-        class="text-sm lg:text-base font-normal text-neutral-900 max-w-[220px] leading-snug"
-      >
-        Po akceptacji wzoru zamów i zapłać za kartkę
-      </p>
-    </div>
+    <!-- Przycisk Kartki drukowane -->
+    <a
+      href="/kartki-drukowane"
+      class="group inline-block transition-transform duration-300 hover:scale-103 active:scale-95 cursor-pointer"
+    >
+      <img
+        src={buttDruk.src}
+        alt="Zobacz galerię i zamów kartkę drukowaną"
+        class="h-11 sm:h-12 w-auto object-contain transition-all duration-300 group-hover:drop-shadow-md"
+      />
+    </a>
   </div>
 </section>

@@ -3,7 +3,7 @@ import { Image, getImage } from "astro:assets";
 import type { ImageMetadata } from "astro";
 
 // 1. Definiujemy dozwolone foldery
-type FolderType = "cards" | "ecards" | "personalized";
+type FolderType = "cards" | "ecards" | "personalized" | "realizations";
 
 interface Props {
   id: string;
@@ -17,6 +17,8 @@ const { id, folder, title } = Astro.props;
 const folderPrefixes: Record<FolderType, string> = {
   cards: "Kartka",
   ecards: "E-kartka",
+  personalized: "Personalizowana",
+  realizations: "Realizacje",
 };
 
 const prefix = folderPrefixes[folder] ?? "";
