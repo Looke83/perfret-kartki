@@ -1,0 +1,94 @@
+---
+interface Props {
+  id?: string;
+  class?: string;
+}
+
+const { id = "cennik", class: className = "" } = Astro.props;
+
+// Wyróżniki z koszykiem u góry
+const topBadges = [
+  { text: "bezpłatna wizualizacja" },
+  { text: "zmiana życzeń" },
+  { text: "Zmiana kolorystyki*" },
+];
+---
+
+<section id={id} class:list={["w-full", className]} aria-label="Cennik e-kartek">
+  <div class="site-wrapper flex flex-col items-center max-w-4xl mx-auto">
+    <!-- Główny tytuł -->
+    <h2
+      class="text-4xl sm:text-5xl font-serif text-[#0d5358] tracking-normal mb-10 sm:mb-12 text-center"
+    >
+      Cennik
+    </h2>
+
+    <!-- 3 wyróżniki z ikonką wózka zakupowego -->
+    <div
+      class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 items-start justify-items-center w-full max-w-2xl mb-12 sm:mb-16"
+    >
+      {
+        topBadges.map((badge) => (
+          <div class="flex flex-col items-center text-center space-y-2.5">
+            <!-- Ikona wózka sklepowego w kolorze sekcji -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-7 h-7 text-[#0d5358]"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+              />
+            </svg>
+            <span class="text-sm sm:text-[15px] text-[#124b59] font-medium leading-tight">
+              {badge.text}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Główna treść cennika -->
+    <div
+      class="flex flex-col items-center text-center space-y-8 text-[#0d5358] w-full"
+    >
+      <!-- Wstęp do wyceny wzorów z galerii -->
+      <div class="space-y-1">
+        <p class="text-lg sm:text-xl font-normal leading-snug">
+          Całkowity koszt wykonania elektronicznej kartki świątecznej
+        </p>
+        <p class="text-lg sm:text-xl font-normal leading-snug">
+          na podstawie wzorów z galerii
+        </p>
+        <p class="text-lg sm:text-xl font-normal leading-snug">wynosi:</p>
+      </div>
+
+      <!-- Ceny -->
+      <div class="space-y-2 py-1">
+        <p class="text-xl sm:text-2xl font-bold tracking-tight">
+          129 zł netto dla nowych Klientów
+        </p>
+        <p class="text-xl sm:text-2xl font-bold tracking-tight">
+          109 zł netto dla stałych Klientów perFret DESIGN
+        </p>
+      </div>
+
+      <!-- Projekty na zamówienie -->
+      <div>
+        <p class="text-base sm:text-lg font-medium text-[#124b59]">
+          Koszt projektu na zamówienie - ceny ustalane są indywidualnie.
+        </p>
+        <p class="text-xs sm:text-sm font-semibold text-[#165b6f] tracking-wide">
+          *zmiana kolorystyki możliwa we wzorach oznaczonych literą K przy numerze wzoru
+        </p>
+      </div>
+
+            
+    </div>
+  </div>
+</section>

@@ -10,9 +10,18 @@ const logoFiles = import.meta.glob<{ default: ImageMetadata }>(
 const logos = Object.values(logoFiles).map((file) => file.default);
 ---
 
-<section class="w-full h-28 lg:h-32 flex items-center overflow-hidden">
-  <!-- Kontener z maską gradientową wygaszającą boki -->
-  <div class="relative w-full h-full flex items-center marquee-container">
+<section class="w-full flex flex-col items-center pb-6">
+  <!-- Nagłówek sekcji umieszczony na samej górze -->
+  <div class="text-center mb-6 sm:mb-8">
+    <h2 class="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-[#0d5358]">
+      Zaufali nam:
+    </h2>
+  </div>
+
+  <!-- Kontener z maską gradientową i własną sztywną wysokością -->
+  <div
+    class="relative w-full h-24 lg:h-28 flex items-center overflow-hidden marquee-container"
+  >
     <!-- Pętla przesuwna wycentrowana w pionie -->
     <div
       class="flex w-max items-center h-full marquee-track hover:[animation-play-state:paused]"

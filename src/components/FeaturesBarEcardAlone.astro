@@ -1,0 +1,30 @@
+---
+import ikonaWzory from "../assets/svg/ikona-galeria=wzorow=kartek-swiatecznych.svg";
+import ikonaWizualizacja from "../assets/svg/ikona-darmowe-wizualizacje=kartek-swiatecznych.svg";
+import ikonaPoprawki from "../assets/svg/ikona-korekta-grafik-swiatecznych.svg";
+
+const icons = [
+  { src: ikonaWzory.src, alt: "100+ Wzorów" },
+  { src: ikonaWizualizacja.src, alt: "Darmowa wizualizacja" },
+  { src: ikonaPoprawki.src, alt: "Bezpłatne poprawki" },
+];
+---
+
+<section class="w-full" aria-label="Wyróżniki e-kartek">
+  <div
+    class="grid grid-cols-3 gap-3 sm:gap-6 items-end justify-items-center w-full min-h-[110px] pb-12 pt-12"
+  >
+    {
+      icons.map((icon) => (
+        <div class="flex items-center justify-center w-full">
+          <img
+            src={icon.src}
+            alt={icon.alt}
+            class="h-16 sm:h-20 w-auto object-contain transition-transform duration-200 hover:scale-105"
+            loading="eager"
+          />
+        </div>
+      ))
+    }
+  </div>
+</section>

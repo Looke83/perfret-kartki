@@ -1,20 +1,41 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import HeaderBanner from "../components/HeaderBanner.astro";
 import CardsGallery from "../components/CardsGallery.astro";
-import Process from "../components/Process.astro";
+import FeaturesBarEcardAlone from "../components/FeaturesBarEcardAlone.astro";
 import Footer from "../components/Footer.astro";
+import Personalization from "../components/Personalization.astro";
+import Wishes from "../components/Wishes.astro";
+import Process from "../components/Process.astro";
+import PricingEcards from "../components/PricingEcards.astro";
+import RealizationsEcard from "../components/RealizationsEcard.astro";
+import ClientLogos from "../components/ClientLogos.astro";
 ---
 
 <Layout title="Drukowane kartki świąteczne dla firm - perFRET DESIGN">
   <Header />
-  <main>
+  <HeaderBanner />
+  <FeaturesBarEcardAlone />
+  <main class="flex flex-col gap-20 md:gap-32 lg:gap-40">
     <CardsGallery
-      id="kartki-drukowane"
+      id="e-kartki"
       folder="cards"
-      title="Wzory kartek świątecznych do wyboru:"
+      title="Wzory drukowanych kartek świątecznych do wyboru:"
+    />
+    <Personalization />
+    <Wishes />
+    <PricingEcards
+      id="cennik"
+      topBadges={[
+        { text: "Darmowa wizualizacja" },
+        { text: "Bezpłatne poprawki" },
+        { text: "Szybka realizacja" },
+      ]}
     />
     <Process />
+    <RealizationsEcard />
+    <ClientLogos />
   </main>
   <Footer />
 </Layout>
