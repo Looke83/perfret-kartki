@@ -15,7 +15,8 @@ const items = await Promise.all(
     const rawImage = mod.default;
     const fullImage = await getImage({
       src: rawImage,
-      width: 1600,
+      width: rawImage.width,
+      quality: 90,
       format: "webp",
     });
 
@@ -62,7 +63,8 @@ const items = await Promise.all(
             <Image
               src={item.thumb}
               alt="Przykładowa realizacja"
-              width={600}
+              width={1200}
+              quality={90}
               format="webp"
               class="w-full max-w-sm sm:max-w-md h-auto object-contain drop-shadow-md transition-transform duration-300 hover:scale-102"
               loading={index < 4 ? "eager" : "lazy"}
