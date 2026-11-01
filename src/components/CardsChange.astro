@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+import echange from "../assets/svg/grafika-kartki-swiateczne.svg";
+---
+
+<section
+  class="flex flex-col items-center gap-6 sm:gap-8 lg:gap-10 px-4 sm:px-6 lg:px-8"
+>
+  <div class="w-full max-w-[60px]">
+    <Image
+      src={echange}
+      alt="Grafika przedstawiająca zmianę tradycyjnych kartek świątecznych na e-kartki"
+      class="w-full h-auto"
+    />
+  </div>
+  <div class="text-center">
+    <p class="text-lg sm:text-xl lg:text-[1.3rem] text-[#0d5358]">
+      Przy kartkach z takim oznaczeniem istaniej możliwość zmiany kolorystyki,
+      by dopasować ją całkowice do kolorystyki Twojej firmy.<br /><br />
+      Zamin wybierzesz kartkę, zobacz jakie są możliwości zmian na przykładzie wcześniejszych
+      realizacji.
+    </p>
+  </div>
+</section>

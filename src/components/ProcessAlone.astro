@@ -1,0 +1,51 @@
+---
+import ikonaKrok1 from "../assets/svg/ikona-wybierz-wzor.svg";
+import ikonaKrok2 from "../assets/svg/ikona-przeslij-logo-i-zyczenia.svg";
+import ikonaKrok3 from "../assets/svg/ikona-otrzymaj-darmowa-wizualizacje.svg";
+import ikonaKrok4 from "../assets/svg/ikona-zamow-kartke.svg";
+import logoSvg from "../assets/svg/logo.svg";
+
+const steps = [
+  { src: ikonaKrok1.src, alt: "Krok 1: Wybierz wzór" },
+  { src: ikonaKrok2.src, alt: "Krok 2: Prześlij logo i życzenia" },
+  { src: ikonaKrok3.src, alt: "Krok 3: Otrzymaj darmową wizualizację" },
+  {
+    src: ikonaKrok4.src,
+    alt: "Krok 4: Po akceptacji wzoru zamów i zapłać za kartkę",
+  },
+];
+---
+
+<section id="proces" class="w-auto">
+  <!-- Siatka 4 kroków: 2 na mobile, 4 na desktopie -->
+  <div
+    class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 items-start justify-items-center w-full"
+  >
+    {
+      steps.map((step) => (
+        <div class="flex flex-col items-center justify-center w-full group">
+          <img
+            src={step.src}
+            alt={step.alt}
+            class="w-32 sm:w-36 lg:w-44 h-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-2xs"
+            loading="lazy"
+          />
+        </div>
+      ))
+    }
+  </div>
+   <div class="site-wrapper flex flex-col items-center gap-6 sm:gap-8 lg:gap-10 px-4 sm:px-6 lg:px-8">
+      <h3 class="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-[#0d5358] mb-3 text-center">
+        A teraz prześlij wszystko na <a href="mailto:kontakt@kartkiswiatecznedlafirm.pl" class="text-[#0d5358] underline hover:text-[#0a3f42] transition-colors duration-300">kontakt@kartkiswiatecznedlafirm.pl</a> i pozostańmy perFret!
+      </h3>
+       <img
+        src={logoSvg.src}
+        alt="perFRET DESIGN"
+        class="h-24 sm:h-36 w-auto object-contain "
+      />
+      <a href="tel:+48606970062" class="text-[#0d5358] hover:text-[#0a3f42] transition-colors duration-300 text-lg sm:text-xl lg:text-[1.3rem] font-semibold">
+        +48 606 970 062
+      </a>
+    </div>
+    
+</section>
