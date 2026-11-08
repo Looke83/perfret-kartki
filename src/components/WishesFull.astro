@@ -1,0 +1,296 @@
+---
+import plFlag from "../assets/svg/pl.svg";
+import engFlag from "../assets/svg/eng.svg";
+import deFlag from "../assets/svg/de.svg";
+
+const wishSets = [
+  {
+    id: 1,
+    items: [
+      {
+        flag: plFlag,
+        alt: "Język polski",
+        text: "Wszystkim Klientom, Partnerom oraz Sympatykom naszej Firmy składamy życzenia spokojnych i radosnych Świąt Bożego Narodzenia oraz pomyślności i sukcesów w Nowym Roku",
+      },
+      {
+        flag: engFlag,
+        alt: "Język angielski",
+        text: "We would like to wish all our Customers, Partners and Friends a peaceful and joyous Christmas, and success and prosperity in the New Year",
+      },
+      {
+        flag: deFlag,
+        alt: "Język niemiecki",
+        text: "Wir wünschen allen Kunden, Partnern und Freunden unseres Unternehmens ein friedliches und fröhliches Weihnachtsfest sowie Wohlstand und Erfolg im neuen Jahr.",
+      },
+    ],
+  },
+  {
+    id: 2,
+    items: [
+      {
+        flag: plFlag,
+        alt: "Język polski",
+        text: "Radosnych Świąt Bożego Narodzenia oraz szczęścia i pomyślności w każdym dniu nadchodzącego Nowego Roku wszystkim swoim Klientom, Partnerom i Sympatykom życzy...",
+      },
+      {
+        flag: engFlag,
+        alt: "Język angielski",
+        text: "Wishing a joyous and happy Christmas and prosperous New Year to all our Customers, Partners and Friends. All the best from…",
+      },
+      {
+        flag: deFlag,
+        alt: "Język niemiecki",
+        text: "Allen Kunden, Partnern und Freunden des Unternehmens wünscht ….. frohe Weihnachten, Glück und Wohlstand an jedem Tag des kommenden neuen Jahres.",
+      },
+    ],
+  },
+  {
+    id: 3,
+    items: [
+      {
+        flag: plFlag,
+        alt: "Język polski",
+        text: "Z okazji Świąt Bożego Narodzenia oraz zbliżającego się Nowego Roku pragniemy złożyć Państwu życzenia wszelkiej pomyślności, niepowtarzalnej atmosfery przy wigilijnym stole oraz wszelkich dóbr. Niech magia Świąt Bożego Narodzenia towarzyszy Państwu przez cały Nowy Rok.",
+      },
+      {
+        flag: engFlag,
+        alt: "Język angielski",
+        text: "With the approaching Christmas and the upcoming New Year in mind, we would like to wish you prosperity, an unforgettable atmosphere at the Christmas table, full of bounty. May the magic of Christmas be with you into the New Year.",
+      },
+      {
+        flag: deFlag,
+        alt: "Język niemiecki",
+        text: "Anlässlich des Weihnachtsfestes und des bevorstehenden Jahreswechsels wünschen wir Ihnen alles Gute, eine einzigartige Atmosphäre am Heiligabendtisch und viel Glück. Möge der Zauber von Weihnachten Sie durch das neue Jahr begleiten.",
+      },
+    ],
+  },
+  {
+    id: 4,
+    items: [
+      {
+        flag: plFlag,
+        alt: "Język polski",
+        text: "Dobrych Świąt spędzonych w gronie najbliższych osób, a także zdrowia, szczęścia i wielkiej radości, w imieniu swoim i firmy, życzy...",
+      },
+      {
+        flag: engFlag,
+        alt: "Język angielski",
+        text: "In my own name, and on behalf of the company, I would like to wish you a Happy Christmas with your nearest and dearest, as well as health, happiness and bliss.",
+      },
+      {
+        flag: deFlag,
+        alt: "Język niemiecki",
+        text: "… wünscht Ihnen im Namen des Unternehmens und in seinem eigenen Namen ein frohes Weihnachtsfest im Kreise Ihrer Lieben, Gesundheit, Glück und große Freude.",
+      },
+    ],
+  },
+  {
+    id: 5,
+    items: [
+      {
+        flag: plFlag,
+        alt: "Język polski",
+        text: "Niech ten świąteczny czas będzie przepełniony ciepłem, radością i spokojem. Niech będzie przystankiem i wytchnieniem od codzienności. Tego Państwu i Państwa najbliższym życzymy",
+      },
+      {
+        flag: engFlag,
+        alt: "Język angielski",
+        text: "May this festive time be full of warmth, joy and peace and a rest from the daily. All the best to you and your loved ones.",
+      },
+      {
+        flag: deFlag,
+        alt: "Język niemiecki",
+        text: "Mögen diese Festtage von Wärme, Freude und Frieden erfüllt sein. Lassen Sie es eine Pause und eine Auszeit vom Alltag sein. Das wünschen wir Ihnen und Ihren Lieben",
+      },
+    ],
+  },
+  {
+    id: 6,
+    items: [
+      {
+        flag: plFlag,
+        alt: "Język polski",
+        text: "Z okazji Świąt składamy wszystkim najlepsze życzenia. Niech ten wyjątkowy czas napełni Państwa serca otuchą i nadzieją oraz pozwoli przezwyciężyć nawet największe trudności",
+      },
+      {
+        flag: engFlag,
+        alt: "Język angielski",
+        text: "At Christmas time, we would like to send everyone our best wishes. May this special time fill your hearts with joy, hope nd strength to overcome all obstacles, no matter how hard.",
+      },
+      {
+        flag: deFlag,
+        alt: "Język niemiecki",
+        text: "Zum Weihnachtsfest wünschen wir Ihnen alles Gute. Möge diese besondere Zeit Ihre Herzen mit Ermutigung und Hoffnung erfüllen und Sie befähigen, auch die größten Schwierigkeiten zu überwinden.",
+      },
+    ],
+  },
+  {
+    id: 7,
+    items: [
+      {
+        flag: plFlag,
+        alt: "Język polski",
+        text: "Wyjątkowych Świąt Bożego Narodzenia oraz pomyślności w nadchodzącym Nowym Roku wraz z serdecznymi podziękowaniami za dotychczasową współpracę przesyła...",
+      },
+      {
+        flag: engFlag,
+        alt: "Język angielski",
+        text: "Wishing you a special Christmas and prosperity in the New Year, with heartfelt gratitude for our work together so far, from…",
+      },
+      {
+        flag: deFlag,
+        alt: "Język niemiecki",
+        text: "Ein ganz besonderes Weihnachtsfest und einen guten Rutsch ins neue Jahr zusammen mit einem herzlichen Dank für Ihre bisherige Zusammenarbeit wünscht Ihnen...",
+      },
+    ],
+  },
+  {
+    id: 8,
+    items: [
+      {
+        flag: plFlag,
+        alt: "Język polski",
+        text: "Wszystkim naszym Klientom oraz Kontrahentom chcemy złożyć życzenia spokojnych i pełnych radości Świąt Bożego Narodzenia, a także wielu sukcesów w nadchodzącym 2024 roku",
+      },
+      {
+        flag: engFlag,
+        alt: "Język angielski",
+        text: "We would like to wish our Customers and Business Partners a peaceful Christmas, full of joy, as well as all the success in the coming year 2027.",
+      },
+      {
+        flag: deFlag,
+        alt: "Język niemiecki",
+        text: "Wir wünschen allen unseren Kunden und Geschäftspartnern ein friedliches und frohes Weihnachtsfest sowie viel Erfolg im kommenden Jahr 2027.",
+      },
+    ],
+  },
+  {
+    id: 9,
+    items: [
+      {
+        flag: plFlag,
+        alt: "Język polski",
+        text: "Niech w nadchodzącym Nowy Roku szczęście i pomyślność zawsze Państwu towarzyszą, a każdy dzień przynosi siłę i energię do tworzenia i realizacji nowych pomysłów/planów/zamierzeń. Radosnych Świąt Bożego Narodzenia Państwu i najbliższym życzy...",
+      },
+      {
+        flag: engFlag,
+        alt: "Język angielski",
+        text: "May happiness and prosperity be with you in the coming New Year, and each day bring new strength and the energy to create and carry out new ideas/plans/goals. A joyous Christmas to you and your loved ones from…",
+      },
+      {
+        flag: deFlag,
+        alt: "Język niemiecki",
+        text: "Mögen Glück und Wohlstand Sie im kommenden neuen Jahr immer begleiten und möge jeder Tag Kraft und Energie bringen, damit Sie neue Ideen/Pläne/Absichten erfolgreich entwickeln und umsetzen können. Frohe Weihnachten für Sie und Ihre Lieben wünscht Ihnen …",
+      },
+    ],
+  },
+  {
+    id: 10,
+    items: [
+      {
+        flag: plFlag,
+        alt: "Język polski",
+        text: "Korzystając z okazji zbliżających się Świąt pragniemy serdecznie podziękować wszystkim naszym Klientom, Partnerom i Przyjaciołom za zaufanie i współpracę w mijającym roku. Życzymy Państwu dalszych sukcesów, trafnych decyzji i udanych inwestycji w nadchodzącym Nowym Roku",
+      },
+      {
+        flag: engFlag,
+        alt: "Język angielski",
+        text: "On the occasion of the approaching Christmas, we would like to thank all our customers, partners and friends for putting their trust in us and for all our work together in the passing year. We wish you continued success, good decisions and successful investments in the coming New Year.",
+      },
+      {
+        flag: deFlag,
+        alt: "Język niemiecki",
+        text: "Wir möchten uns an dieser Stelle bei all unseren Kunden, Partnern und Freunden für das Vertrauen und die Zusammenarbeit im vergangenen Jahr bedanken. Wir wünschen Ihnen im kommenden neuen Jahr weiterhin viel Erfolg, gute Entscheidungen und erfolgreiche Investitionen.",
+      },
+    ],
+  },
+  {
+    id: 11,
+    items: [
+      {
+        flag: plFlag,
+        alt: "Język polski",
+        text: "Z okazji Świąt Bożego Narodzenia oraz zbliżającego się Nowego Roku mamy przyjemność złożyć Państwu w imieniu...i własnym życzenia zdrowia, szczęścia i wszelkiej pomyślności w życiu osobistym oraz sukcesów w pracy zawodowej.",
+      },
+      {
+        flag: engFlag,
+        alt: "Język angielski",
+        text: "On the occasion of Christmas and the coming New Year, on behalf of… and from ourselves, we wish you health, happiness and prosperity in your personal life and success at work.",
+      },
+      {
+        flag: deFlag,
+        alt: "Język niemiecki",
+        text: "Anlässlich des Weihnachtsfestes und des bevorstehenden Jahreswechsels freuen wir uns, Ihnen im Namen von …. und von uns selbst Gesundheit, Glück und alles Gute in Ihrem Privatleben und Erfolg in Ihrer beruflichen Tätigkeit zu wünschen.",
+      },
+    ],
+  },
+];
+---
+
+<section id="zyczenia" class="w-full bg-[#edf2f6] border-y border-neutral-200/70 pb-20">
+  <div class="site-wrapper flex flex-col items-center">
+    
+    <!-- Czerwony akcent dekoracyjny nad tytułem[cite: 3] -->
+    <div class="w-12 h-0.5 bg-[#e31e24] mb-5"></div>
+
+    <!-- Nagłówek i podtytuł[cite: 3] -->
+    <div class="text-center mb-14">
+      <h2 class="text-3xl sm:text-4xl lg:text-[2.75rem] font-medium tracking-tight text-[#0d5358] mb-3">
+        Życzenia do wyboru w 3 językach
+      </h2>
+      <p class="text-xs sm:text-sm font-semibold tracking-widest text-[#0d5358]/80 uppercase">
+        Mogą być też dowolne przesłane przez Ciebie
+      </p>
+    </div>
+
+    <!-- Lista 11 wierszy z zachowaniem separatorów i kolumn[cite: 3, 4] -->
+    <div class="w-full max-w-6xl flex flex-col gap-20 sm:mt-10">
+      {
+        wishSets.map((set) => (
+          <div class="flex flex-col md:flex-row items-center w-full">
+            
+<!-- Duża normalna cyfra (arabska) z wyraźnym daszkiem -->
+            <div class="w-full md:w-32 shrink-0 flex items-center justify-center md:justify-start select-none pointer-events-none mb-6 md:mb-0">
+              <span 
+                class="font-sans font-extrabold leading-none"
+                style="font-family: Arial, Helvetica, sans-serif; font-size: clamp(4.5rem, 10vw, 8rem); color: #0d5358; opacity: 0.16;"
+              >
+                {set.id}
+              </span>
+            </div>
+
+            <!-- Siatka 3 kolumn życzeń z pionowymi separatorami[cite: 3] -->
+            <div class="grid grid-cols-1 md:grid-cols-3 flex-1 w-full gap-10 md:gap-0 items-stretch">
+              {
+                set.items.map((item, index) => (
+                  <div
+                    class:list={[
+                      "flex flex-col items-center text-center px-4 sm:px-8 lg:px-12",
+                      index > 0 && "md:border-l md:border-[#2d7387]/50",
+                    ]}
+                  >
+                    <!-- Flaga[cite: 3] -->
+                    <div class="h-10 mb-8 flex items-center justify-center">
+                      <img
+                        src={item.flag.src}
+                        alt={item.alt}
+                        class="h-8 w-auto rounded-xs shadow-xs object-contain"
+                      />
+                    </div>
+
+                    <!-- Treść życzeń[cite: 3] -->
+                    <p class="font-serif italic text-base sm:text-lg lg:text-[1.15rem] leading-relaxed text-[#0d5358]/95 max-w-sm">
+                      {item.text}
+                    </p>
+                  </div>
+                ))
+              }
+            </div>
+
+          </div>
+        ))
+      }
+    </div>
+
+  </div>
+</section>

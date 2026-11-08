@@ -12,10 +12,12 @@ const topBadges = [
   { text: "zmiana życzeń" },
   { text: "Zmiana kolorystyki*" },
 ];
+
+import ProcessAlone from "../components/ProcessAlone.astro";
 ---
 
 <section id={id} class:list={["w-full", className]} aria-label="Cennik e-kartek">
-  <div class="site-wrapper flex flex-col items-center max-w-4xl mx-auto">
+  <div class="site-wrapper flex flex-col items-center max-w-4xl mx-auto mb-10">
     <!-- Główny tytuł -->
     <h2
       class="text-4xl sm:text-5xl font-serif text-[#0d5358] tracking-normal mb-10 sm:mb-12 text-center"
@@ -91,4 +93,5 @@ const topBadges = [
             
     </div>
   </div>
+  <ProcessAlone />
 </section>
