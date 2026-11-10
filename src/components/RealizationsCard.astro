@@ -2,6 +2,8 @@
 import { Image, getImage } from "astro:assets";
 import type { ImageMetadata } from "astro";
 import Process from "../components/Process.astro";
+import FeaturesBarCardAlone from "./FeaturesBarCardAlone.astro";
+import CardsChange from "./CardsChange.astro";
 
 // Automatyczne pobranie wszystkich grafik z folderu realizations
 const allImages = import.meta.glob<{ default: ImageMetadata }>(
@@ -36,20 +38,16 @@ const items = await Promise.all(
       <h2
         class="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-[#0d5358] mb-3"
       >
-        Przykładowe realizacje
+        Drukowane kartki świąteczne dla firm
       </h2>
-      <p
-        class="text-xs sm:text-sm font-bold tracking-widest text-[#0d5358]/80 uppercase"
-      >
-        Zobacz wybrane projekty kartek świątecznych zrealizowane dla naszych
-        klientów
-      </p>
+      <FeaturesBarCardAlone />
     </div>
+    <CardsChange />
 
     <!-- Siatka realizacji: 2 na wiersz w identycznym stylu i rozmiarze co w sekcji Personalizacja -->
     <div
       id="grid-realizacje"
-      class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-12 items-center justify-items-center w-full"
+      class="grid grid-cols-2 md:grid-cols-3 gap-6 lg:gap-12 items-center justify-items-center w-full"
     >
       {
         items.map((item, index) => (
@@ -62,7 +60,7 @@ const items = await Promise.all(
             <Image
               src={item.thumb}
               alt="Przykładowa realizacja"
-              width={600}
+              width={1200}
               format="webp"
               class="w-full max-w-sm sm:max-w-md h-auto object-contain drop-shadow-md transition-transform duration-300 hover:scale-102"
               loading={index < 4 ? "eager" : "lazy"}
@@ -72,7 +70,7 @@ const items = await Promise.all(
       }
     </div>
   </div>
-  <Process />
+  <!-- <Process /> -->
 </section>
 
 <script>
