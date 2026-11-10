@@ -1,0 +1,125 @@
+---
+interface Props {
+  id?: string;
+  class?: string;
+}
+
+const { id = "cennik", class: className = "" } = Astro.props;
+
+// Wyróżniki z koszykiem u góry
+const topBadges = [
+  { text: "bezpłatna wizualizacja" },
+  { text: "zmiana życzeń" },
+  { text: "Zmiana kolorystyki*" },
+];
+
+const featuresList = [
+  "z logo Twojej firmy",
+  "z dowolnymi życzeniami w środku kartki",
+  "ze stopką teleadresową",
+  "z kopertami, bez nadruku",
+];
+
+// Tabela progów ilościowych
+const quantityTiers = [
+  { qty: "od 50 szt.", price: "4,60" },
+  { qty: "od 100 szt.", price: "3,90" },
+  { qty: "od 150 szt.", price: "3,80" },
+  { qty: "od 200 szt.", price: "3,20" },
+  { qty: "od 300 szt.", price: "2,90" },
+  { qty: "od 500 szt.", price: "2,20" },
+];
+
+import ProcessAlone from "../components/ProcessAlone.astro";
+---
+
+<section id={id} class:list={["w-full", className]} aria-label="Cennik e-kartek">
+  <div class="site-wrapper flex flex-col items-center max-w-4xl mx-auto mb-10">
+    <!-- Główny tytuł -->
+    <h2
+      class="text-4xl sm:text-5xl font-serif text-[#0d5358] tracking-normal mb-10 sm:mb-12 text-center"
+    >
+      Cennik
+    </h2>
+
+    <!-- 3 wyróżniki z ikonką wózka zakupowego -->
+    <div
+      class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 items-start justify-items-center w-full max-w-2xl mb-12 sm:mb-16"
+    >
+      {
+        topBadges.map((badge) => (
+          <div class="flex flex-col items-center text-center space-y-2.5">
+            <!-- Ikona wózka sklepowego w kolorze sekcji -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-7 h-7 text-[#0d5358]"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+              />
+            </svg>
+            <span class="text-sm sm:text-[15px] text-[#124b59] font-medium leading-tight">
+              {badge.text}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Główna treść cennika -->
+    <div
+      class="flex flex-col items-center text-center space-y-8 text-[#0d5358] w-full"
+    >
+      <!-- Wstęp do wyceny wzorów z galerii -->
+      <div class="space-y-1">
+        <p class="text-lg sm:text-xl font-normal leading-snug">
+          Całkowity koszt wykonania kartek świątecznych:
+        </p>
+        <!-- 4 wypunktowane linijki -->
+        <ul class="space-y-2 text-left sm:text-center inline-block">
+          {
+            featuresList.map((item) => (
+              <li class="flex items-center text-base sm:text-lg text-[#124b59]">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#0d5358] mr-2.5 shrink-0 inline-block"></span>
+                <span>{item}</span>
+              </li>
+            ))
+          }
+        </ul>
+        <!-- Dodatkowa linijka pod wypunktowaniem -->
+        <p class="text-sm sm:text-base font-medium text-[#165b6f] pt-1">
+          oraz ze wszystkimi zmianami graficznymi, by dopasować projekt kartki do Twoich barw firmowych:
+        </p>
+      </div>
+      <!-- Kafelki z progami nakładów -->
+      <div class="w-full max-w-3xl">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+          {
+            quantityTiers.map((tier) => (
+              <div class="flex flex-col items-center justify-center p-3.5 rounded-xl border border-[#0d5358]/15 bg-white/60 shadow-sm transition-all hover:border-[#0d5358]/40 hover:-translate-y-0.5">
+                <span class="text-xs uppercase tracking-wider text-[#165b6f] font-semibold mb-1">
+                  {tier.qty}
+                </span>
+                <span class="text-xl sm:text-2xl font-bold text-[#0d5358] tracking-tight">
+                  {tier.price} <span class="text-xs font-normal">zł</span>
+                </span>
+                <span class="text-[11px] text-[#124b59]/75 font-medium mt-0.5">
+                  netto / szt.
+                </span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+            
+    </div>
+  </div>
+  <ProcessAlone />
+</section>
