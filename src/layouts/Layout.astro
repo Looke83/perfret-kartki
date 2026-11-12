@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import Analytics from "../seo/Analytics.astro";
+import CookieBanner from "../ui/CookieBanner.astro";
 
 interface Props {
   title?: string;
@@ -66,10 +68,12 @@ const schemaOrg = {
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
+    <Analytics />
   </head>
   <body
     class="min-h-screen flex flex-col bg-surface text-body antialiased selection:bg-primary/20 selection:text-primary"
   >
     <slot />
+    <CookieBanner />
   </body>
 </html>
